@@ -1,0 +1,9 @@
+c:\users\user\documents\visual studio 2017\Projects\MvcctExample\MvcctExample\bin\Release\netcoreapp1.1\MvcctExample.deps.json
+c:\users\user\documents\visual studio 2017\Projects\MvcctExample\MvcctExample\bin\Release\netcoreapp1.1\MvcctExample.runtimeconfig.json
+c:\users\user\documents\visual studio 2017\Projects\MvcctExample\MvcctExample\bin\Release\netcoreapp1.1\MvcctExample.runtimeconfig.dev.json
+c:\users\user\documents\visual studio 2017\Projects\MvcctExample\MvcctExample\bin\Release\netcoreapp1.1\MvcctExample.dll
+c:\users\user\documents\visual studio 2017\Projects\MvcctExample\MvcctExample\bin\Release\netcoreapp1.1\MvcctExample.pdb
+c:\users\user\documents\visual studio 2017\Projects\MvcctExample\MvcctExample\obj\Release\netcoreapp1.1\MvcctExample.csprojResolveAssemblyReference.cache
+c:\users\user\documents\visual studio 2017\Projects\MvcctExample\MvcctExample\obj\Release\netcoreapp1.1\MvcctExample.AssemblyInfo.cs
+c:\users\user\documents\visual studio 2017\Projects\MvcctExample\MvcctExample\obj\Release\netcoreapp1.1\MvcctExample.dll
+c:\users\user\documents\visual studio 2017\Projects\MvcctExample\MvcctExample\obj\Release\netcoreapp1.1\MvcctExample.pdb

@@ -1,0 +1,78 @@
+@model  FoodListViewModel
+@using MvcctExample.DTOs
+@using MvcctExample.ViewModels
+@{
+    ViewData["Title"] = "Mvcct Grid Example";
+    if (Model.Query.AttachedTo == null)
+    {
+        Model.Query.AttachEndpoint(Url.Action("Index", "Food"));
+    }
+}
+<h2>@ViewData["Title"]</h2>
+
+<form asp-antiforgery="true">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <grid asp-for="Products.Data"
+            type="Immediate"
+            mvc-controller=
+                "typeof(MvcctExample.Controllers.FoodController)"
+            all-properties="true"
+            row-id="readonly-example"
+            operations="user => Functionalities.FullInLine 
+                    | Functionalities.GroupDetail"
+            query-for="Query"
+            sorting-clauses="2"
+            enable-query="true"
+            query-grouping-type="typeof(FoodDTOGrouping)"
+            class="table table-condensed table-bordered" >
+        <column asp-for="Products.Data.Element().SupplierId">
+            <external-key-remote display-property="Products.Data.Element()
+                .SupplierCompanyName"
+                items-value-property="Value"
+                items-display-property="Display"
+                items-url="@(Url.Action("GetSuppliers", "Food",
+                new { search = "_zzz_" }))"
+                dataset-name="suppliers"
+                url-token="_zzz_"              
+                max-results="20" />
+        </column>
+        <row-type asp-for="Products.Data.SubInfo<FoodDTOGrouping>().Model"
+                  from-row="0">
+            <column 
+               asp-for="Products.Data.SubElement<FoodDTOGrouping>().SupplierIdCount" />
+            <column 
+               asp-for="Products.Data.SubElement<FoodDTOGrouping>().PackageCount" />
+        </row-type>
+        <toolbar zone-name="@LayoutStandardPlaces.Header">
+            <pager class="pagination pagination-sm"
+                   max-pages="4"
+                   page-size-default="5"
+                   total-pages="Products.TotalPages" />
+            &nbsp;
+            <query type="Filtering" />
+            <query type="Sorting" />
+            <query type="Grouping" />
+            <verify-permission 
+                    required-permissions="@(Functionalities.Append)">
+                <button type="button" data-operation="add append 0"
+                        class="btn btn-sm btn-primary">
+                    new product
+                </button>
+            </verify-permission>
+        </toolbar>
+    </grid>
+    
+</form>
+    @section Scripts {
+
+        <link href="~/lib/awesomplete/awesomplete.css" rel="stylesheet" />
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+        <script src="~/lib/mvcct-controls/mvcct.controls.min.js"></script>
+        <script src="~/lib/mvcct-controls/modules/mvcct.controls.ajax.min.js"></script>
+        <script src="~/lib/awesomplete/awesomplete.min.js"></script>
+        <script src="~/lib/mvcct-controls/modules/mvcct.controls.autocomplete.min.js"></script>
+        <script src="~/lib/mvcct-controls/modules/mvcct.controls.serverGrid.min.js"></script>
+        <script src="~/lib/mvcct-odata/dest/global/mvcct.odata.min.js"></script>
+        <script src="~/lib/mvcct-controls/modules/mvcct.controls.query.min.js"></script>
+    }
+

@@ -1,0 +1,39 @@
+{
+    "name":  "mvcct-controls",
+    "version": "1.0.5",
+    "homepage": "https://github.com/MvcControlsToolkit/mvcct-controls",
+    "description": "core javascript files for Mvc Controls Toolkit controls",
+    "main": [
+       "mvcct.controls.min.js"
+    ],
+    "ignore": [
+        "**/.*",
+        "*.json",
+        "*.md",
+        "*.txt",
+        "!LICENSE.txt",
+        "gulpfile.js"
+    ],
+    "keywords": [
+        "grid",
+        "detail form",
+        "autocomplete",
+        "pager",
+        "query",
+        "mvc controls toolkit"
+    ],
+    "dependencies": {
+        "mvcct-enhancer": ">=1.1.0",
+        "awesomplete": ">=1.1.1",
+        "mvcct-odata": ">=1.0.1"
+    },
+    "authors": [
+        "Mvc Controls Toolkit Team",
+        "Francesco Abbruzzese"
+    ],
+    "license": "https://github.com/MvcControlsToolkit/mvcct-controls/blob/master/LICENSE.txt",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/MvcControlsToolkit/mvcct-controls.git"
+    }
+}
